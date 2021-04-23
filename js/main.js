@@ -9,6 +9,16 @@ let getRon = (e) => {
   }).catch((err) => console.error);
 };
 
+let getYes = (e) => {
+  console.log('yes');
+  let url = '/api/yes';
+  fetch(url).then((res) => res.json()).then((content) => {
+    let main = document.querySelector('main');
+    main.innerHTML = `<h2>${content.msg}</h2>`;
+  }).catch((err) => console.error);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('ron').addEventListener('click', getRon);
+  document.getElementById('yep').addEventListener('click', getYes);
 });
