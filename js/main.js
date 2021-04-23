@@ -1,6 +1,7 @@
-const URL = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes';
+const URL = '/api/ron/quotes';
 
 let getRon = (e) => {
+  e.preventDefault();
   console.log('get ron quote');
   fetch(URL).then((res) => res.json()).then((content) => {
     let main = document.querySelector('main');
